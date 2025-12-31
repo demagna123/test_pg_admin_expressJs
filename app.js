@@ -14,8 +14,10 @@ app.use(appRouter);
 //   console.log("Database connected");
 // });
 
-server.listen(process.env.APP_PORT, async () => {
-  console.log(`Server demarer avec succès au port ${process.env.APP_PORT}`);
+const PORT = process.env.PORT || process.env.APP_PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log(`Server démarré au port ${PORT}`);
 });
 
 // module.exports = { io };
