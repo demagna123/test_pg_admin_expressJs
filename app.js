@@ -10,9 +10,9 @@ app.use(express.json());
 const server = http.createServer(app);
 app.use(appRouter);
 
-// db.sequelize.sync({alter: true}).then(() => {
-//   console.log("Database connected");
-// });
+db.sequelize.sync({alter: true}).then(() => {
+  console.log("Database connected");
+});
 
 const PORT = process.env.PORT || process.env.APP_PORT || 3000;
 
