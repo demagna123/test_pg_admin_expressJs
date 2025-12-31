@@ -15,9 +15,11 @@ async function createArticleService(req, res) {
       message: "succcdf",
     });
   } catch (error) {
+    console.error(error); // log complet dans Render logs
     return res.status(400).json({
       success: false,
-      message: "error",
+      message: error.message,
+      stack: error.stack, // optionnel pour debug
     });
   }
 }
